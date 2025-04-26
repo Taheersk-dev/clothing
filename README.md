@@ -1,159 +1,146 @@
-# clothing
-fashion with cushion
+delux
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>UrbanWear - Clothing for Everyone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXE Clothing Boutique</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f9f7f4;
       color: #333;
     }
-
     header {
-      background: #111;
-      color: white;
-      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 20px;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeIn 1s ease-in;
     }
-
-    header h1 {
-      font-size: 1.8rem;
-    }
-
     nav a {
-      color: white;
       margin-left: 20px;
       text-decoration: none;
+      color: #333;
       font-weight: bold;
+      transition: color 0.3s;
     }
-
+    nav a:hover {
+      color: #7d9775;
+    }
     .hero {
-      background: url('https://images.unsplash.com/photo-1618354691373-d6c9cfe72863') no-repeat center center/cover;
-      height: 80vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
+      padding: 50px;
+      animation: fadeIn 1s ease-in;
     }
-
-    .hero h2 {
-      font-size: 3rem;
+    .hero img {
+      max-width: 50%;
+      border-radius: 20px;
+      animation: fadeSlide 1s ease-out;
+    }
+    .hero-text {
+      margin-left: 50px;
+      max-width: 40%;
+    }
+    .hero-text h1 {
+      font-family: 'Georgia', serif;
+      font-size: 48px;
       margin-bottom: 20px;
     }
-
-    .hero button {
-      background: #ff5252;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1rem;
-      color: white;
-      border-radius: 5px;
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .sizes button {
+      padding: 10px 15px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      background: #fff;
       cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
     }
-
-    .section {
-      padding: 60px 40px;
-      text-align: center;
+    .sizes button:hover, .sizes button.active {
+      background-color: #7d9775;
+      border-color: #7d9775;
+      color: #fff;
     }
-
-    .section h3 {
-      font-size: 2rem;
-      margin-bottom: 40px;
+    .add-to-cart {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #7d9775;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      border-radius: 5px;
     }
-
-    .products {
+    .add-to-cart:hover {
+      transform: scale(1.05);
+    }
+    .collections {
+      padding: 50px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
+      animation: fadeSlide 1.5s ease-out;
     }
-
-    .product {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .product img {
+    .collections img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
     }
-
-    .product h4 {
-      margin: 15px;
-      font-size: 1.2rem;
+    .collections img:hover {
+      transform: scale(1.05);
     }
-
-    .product p {
-      margin: 0 15px 20px;
-      color: #888;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>UrbanWear</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div><strong>LUXE</strong></div>
+  <nav>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div>
-      <h2>Style That Speaks for You</h2>
-      <button>Shop Now</button>
+<section class="hero">
+  <img src="https://via.placeholder.com/500x600" alt="Sustainable Trench Coat">
+  <div class="hero-text">
+    <h1>Sustainable Trench Coat</h1>
+    <p>$350</p>
+    <p>A timeless trench coat crafted from eco-friendly materials. Combining streetwear with luxury, it offers a stylish and sustainable choice for the modern wardrobe.</p>
+    <div class="sizes">
+      <button>S</button>
+      <button>M</button>
+      <button>L</button>
     </div>
-  </section>
+    <button class="add-to-cart">ADD TO CART</button>
+  </div>
+</section>
 
-  <section class="section">
-    <h3>Featured Products</h3>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1618354691373-d6c9cfe72863" alt="T-Shirt">
-        <h4>Classic Tee</h4>
-        <p>$29.99</p>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="Hoodie">
-        <h4>Urban Hoodie</h4>
-        <p>$49.99</p>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1542062703-3c7f0f9c47d8" alt="Jacket">
-        <h4>Denim Jacket</h4>
-        <p>$89.99</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 UrbanWear. All rights reserved.
-  </footer>
+<section id="shop" class="collections">
+  <img src="https://via.placeholder.com/300x400" alt="Streetwear Hoodie">
+  <img src="https://via.placeholder.com/300x400" alt="Luxury Coat">
+  <img src="https://via.placeholder.com/300x400" alt="Organic Cotton Dress">
+  <img src="https://via.placeholder.com/300x400" alt="Linen Trousers">
+</section>
 
 </body>
 </html>
